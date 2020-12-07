@@ -8,15 +8,25 @@
 </head>
 <body>
 
-<div id="wrapper">
+<div id="wrapper" style="border: groove;border-radius: 10px;text-align: center;border-top-color: skyblue;">
     <div id="header">
         <h2>Customer Manager</h2>
     </div>
 </div>
 
 <div id="container">
-    <div id="content">
-        <table>
+    <div id="content" style="position: relative;
+    top: 50px;
+    border: groove;
+    border-radius: 10px;
+    border-top-color: red;
+text-align: -webkit-center;">
+
+        <table style="text-align: center;
+    border-spacing: 20px;
+    letter-spacing: 1px;
+    inline-size: -webkit-fill-available;
+}">
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
