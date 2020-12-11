@@ -22,6 +22,21 @@
     border-top-color: red;
 text-align: -webkit-center;">
 
+
+        <input type="button"
+               value="Add Customer"
+               onclick="window.location.href='showFormAdd'; return false"
+               class="add-button"
+               style="
+               position: relative;
+    bottom: 40px;
+    font-size: large;
+    border-radius: 7px;"
+        />
+
+
+
+
         <table style="text-align: center;
     border-spacing: 20px;
     letter-spacing: 1px;
