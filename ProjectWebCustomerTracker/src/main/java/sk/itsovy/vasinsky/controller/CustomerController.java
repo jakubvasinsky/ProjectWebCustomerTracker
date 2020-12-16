@@ -1,5 +1,6 @@
 package sk.itsovy.vasinsky.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import sk.itsovy.vasinsky.dao.CustomerDao;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import sk.itsovy.vasinsky.entity.Customer;
 import sk.itsovy.vasinsky.service.CustomerService;
 
@@ -48,4 +50,24 @@ public class CustomerController {
 return "redirect:/customer/list";
     }
 
+
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("customerId") int theId, Model theModel) {
+
+
+        Customer theCustomer = customerService.getCustomer(theId);
+
+
+
+        theModel.addAttribute("customer", theCustomer);
+
+
+        return "customer-form";
+    }
+
+    @GetMapping("/delete")
+    public String deleteCustomer(@RequestParam("customerId") int theId){
+        customerService.deleteCustomer(theId);
+        return "redirect:/customer/list";
+    }
 }
